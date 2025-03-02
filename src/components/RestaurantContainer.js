@@ -4,7 +4,6 @@ const RestaurantContainer = (props) => {
   const { resList } = props;
   const { id, name, cloudinaryImageId, avgRating, cuisines, costForTwo } =
     resList?.info;
-  console.log(cloudinaryImageId);
 
   return (
     <div className="res-card">

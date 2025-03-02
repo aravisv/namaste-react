@@ -19,6 +19,12 @@
     margin: 10px;
 }
 
+.filters{
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+
 .filter-btn{
     cursor: pointer;
     margin: 10px 0;
@@ -29,7 +35,7 @@
 }
 
 .res-container{
-    display: flex;
+    display: flex;flex-wrap: wrap;
 }
 
 .res-card{
