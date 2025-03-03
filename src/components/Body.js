@@ -1,6 +1,7 @@
 import RestaurantContainer from "./RestaurantContainer";
 import { resList } from "../utils/mockData";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -23,6 +24,7 @@ const Body = () => {
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
   };
+  console.log({ filteredRestaurants });
 
   return (
     <div className="body">
@@ -63,7 +65,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantContainer key={restaurant.info.id} resList={restaurant} />
+          <Link
+            to={"/restaurant/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <RestaurantContainer resList={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

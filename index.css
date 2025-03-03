@@ -55,3 +55,10 @@
 .res-card > img{
     width: 90%;
 }
+
+.res-card > a {
+    text-decoration: none;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
