@@ -16,10 +16,17 @@ export class About extends React.Component {
   constructor(props) {
     super(props);
     console.log("parent constructor");
+    this.state = {
+      count: 1,
+    };
   }
 
   componentDidMount() {
     console.log("parent componentDidMount");
+  }
+
+  componentDidUpdate() {
+    console.log("parent componentDidUpdate");
   }
 
   render() {
@@ -27,8 +34,16 @@ export class About extends React.Component {
     return (
       <div>
         <h1>About</h1>
-        <ProjectTeam name="Aravinda" />
-        <ProjectTeamClass name="Aravinda" />
+        <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          Increase Counter
+        </button>
+        <span>count is{this.state.count}</span>
         <ProjectTeamClass name="Aravinda" />
       </div>
     );
