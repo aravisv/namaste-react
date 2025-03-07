@@ -29,6 +29,10 @@ export class About extends React.Component {
     console.log("parent componentDidUpdate");
   }
 
+  componentWillUnmount() {
+    console.log("parent componentWillUnmount");
+  }
+
   render() {
     console.log("parent render");
     return (

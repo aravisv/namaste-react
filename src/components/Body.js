@@ -24,7 +24,6 @@ const Body = () => {
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
   };
-  console.log({ filteredRestaurants });
 
   return (
     <div className="body">

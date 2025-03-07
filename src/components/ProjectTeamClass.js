@@ -17,6 +17,10 @@ class ProjectTeamClass extends React.Component {
     console.log("child componentDidUpdate");
   }
 
+  componentWillUnmount() {
+    console.log("child componentWillUnmount");
+  }
+
   render() {
     console.log("child render");
     return (
