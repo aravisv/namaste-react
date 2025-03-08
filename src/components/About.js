@@ -1,55 +1,57 @@
 import React from "react";
 import ProjectTeam from "./ProjectTeam";
-import ProjectTeamClass from "./ProjectTeamClass";
+//import ProjectTeamClass from "./ProjectTeamClass";
 
-// export const About = () => {
-//   return (
-//     <div>
-//       <h1>About</h1>
-//       <ProjectTeam name="Aravinda" />
-//       <ProjectTeamClass name="Aravinda" />
-//     </div>
-//   );
-// };
+const About = () => {
+  return (
+    <div>
+      <h1>About</h1>
+      <ProjectTeam name="Aravinda" />
+      {/* <ProjectTeamClass name="Aravinda" /> */}
+    </div>
+  );
+};
 
-export class About extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log("parent constructor");
-    this.state = {
-      count: 1,
-    };
-  }
+export default About;
 
-  componentDidMount() {
-    console.log("parent componentDidMount");
-  }
+// export class About extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     console.log("parent constructor");
+//     this.state = {
+//       count: 1,
+//     };
+//   }
 
-  componentDidUpdate() {
-    console.log("parent componentDidUpdate");
-  }
+//   componentDidMount() {
+//     console.log("parent componentDidMount");
+//   }
 
-  componentWillUnmount() {
-    console.log("parent componentWillUnmount");
-  }
+//   componentDidUpdate() {
+//     console.log("parent componentDidUpdate");
+//   }
 
-  render() {
-    console.log("parent render");
-    return (
-      <div>
-        <h1>About</h1>
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Increase Counter
-        </button>
-        <span>count is{this.state.count}</span>
-        <ProjectTeamClass name="Aravinda" />
-      </div>
-    );
-  }
-}
+//   componentWillUnmount() {
+//     console.log("parent componentWillUnmount");
+//   }
+
+//   render() {
+//     console.log("parent render");
+//     return (
+//       <div>
+//         <h1>About</h1>
+//         <button
+//           onClick={() => {
+//             this.setState({
+//               count: this.state.count + 1,
+//             });
+//           }}
+//         >
+//           Increase Counter
+//         </button>
+//         <span>count is{this.state.count}</span>
+//         <ProjectTeamClass name="Aravinda" />
+//       </div>
+//     );
+//   }
+// }
