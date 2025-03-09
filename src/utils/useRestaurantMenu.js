@@ -19,7 +19,9 @@ const useRestaurantMenu = (restaurantId) => {
           return {
             id: menuCard?.card?.info?.id,
             name: menuCard?.card?.info?.name,
-            price: menuCard?.card?.info?.defaultPrice / 100,
+            price:
+              (menuCard?.card?.info?.defaultPrice ||
+                menuCard?.card?.info?.price) / 100,
           };
         }
       )

@@ -7,8 +7,8 @@ const RestaurantMenu = () => {
   const { restaurantName, menuItems } = useRestaurantMenu(restaurantId);
 
   return (
-    <div className="menu">
-      <h1>{restaurantName}</h1>
+    <div className="m-6">
+      <h1 className="text-2xl font-medium text-orange-600">{restaurantName}</h1>
       <ul>
         {menuItems.map((item) => (
           <li key={item.id}>

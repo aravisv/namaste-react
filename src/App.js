@@ -11,7 +11,7 @@ const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 
 const AppLayout = () => {
   return (
-    <div className="app">
+    <div>
       <Header />
       <Outlet />
     </div>
@@ -32,7 +32,9 @@ const appRoute = createBrowserRouter([
         path: "/",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <Body />,
+            <div className="p-4">
+              <Body />
+            </div>
           </Suspense>
         ),
       },
@@ -40,7 +42,9 @@ const appRoute = createBrowserRouter([
         path: "/about",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <About />,
+            <div className="p-4">
+              <About />
+            </div>
           </Suspense>
         ),
       },
@@ -48,7 +52,9 @@ const appRoute = createBrowserRouter([
         path: "/contact",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <Contact />,
+            <div className="p-4">
+              <Contact />
+            </div>
           </Suspense>
         ),
       },
@@ -56,7 +62,9 @@ const appRoute = createBrowserRouter([
         path: "/restaurant/:restaurantId",
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
-            <RestaurantMenu />,
+            <div className="p-4">
+              <RestaurantMenu />
+            </div>
           </Suspense>
         ),
       },
