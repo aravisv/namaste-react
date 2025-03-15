@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantContainer from "./RestaurantContainer";
+import RestaurantContainer, { withPromotedLabel } from "./RestaurantContainer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurants from "../utils/useRestaurants";
@@ -13,6 +13,8 @@ const Body = () => {
   if (!onlineStatus) {
     return <h1>You are offline. Please check internet connection</h1>;
   }
+
+  const PromotedRestaurantContainer = withPromotedLabel(RestaurantContainer);
 
   return (
     <div className="body">
@@ -42,13 +44,18 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
+      {/* choose every 3rd restaurant as promoted for learning purpose */}
       <div className="flex flex-wrap">
-        {filteredRestaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant, index) => (
           <Link
             to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestaurantContainer resList={restaurant} />
+            {index % 3 === 0 ? (
+              <PromotedRestaurantContainer resList={restaurant} />
+            ) : (
+              <RestaurantContainer resList={restaurant} />
+            )}
           </Link>
         ))}
       </div>
