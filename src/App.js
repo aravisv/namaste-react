@@ -1,7 +1,9 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import useDummyUser from "./utils/useDummyUser";
+import UserContext from "./utils/UserContext";
 
 const About = lazy(() => import("./components/About"));
 const Header = lazy(() => import("./components/Header"));
@@ -10,11 +12,21 @@ const Contact = lazy(() => import("./components/Contact"));
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 
 const AppLayout = () => {
+  const { getUser } = useDummyUser();
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    getUser().then((res) => {
+      setUser(res.userName);
+    });
+  }, []);
+
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ userName: user }}>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
