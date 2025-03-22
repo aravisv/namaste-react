@@ -12,6 +12,7 @@ const Header = lazy(() => import("./components/Header"));
 const Body = lazy(() => import("./components/Body"));
 const Contact = lazy(() => import("./components/Contact"));
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
+const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   const { getUser } = useDummyUser();
@@ -80,6 +81,16 @@ const appRoute = createBrowserRouter([
           <Suspense fallback={<h1>Loading...</h1>}>
             <div className="p-4">
               <RestaurantMenu />
+            </div>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <div className="p-4">
+              <Cart />
             </div>
           </Suspense>
         ),

@@ -27,7 +27,9 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart - {`${cartItems?.length}`}</li>
+          <li>
+            <Link to="/cart">Cart - {`${cartItems?.length}`}</Link>
+          </li>
           {/* <UserContext.Consumer>
             {(data) => {
               return <li>User: {data.userName}</li>;

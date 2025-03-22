@@ -3,7 +3,7 @@ import { BASE_IMG_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 
-const CategoryItems = ({ item }) => {
+const CategoryItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleAddItem = () => {
@@ -49,4 +49,4 @@ const CategoryItems = ({ item }) => {
   );
 };
 
-export default CategoryItems;
+export default CategoryItem;

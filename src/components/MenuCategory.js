@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryItems from "./CategoryItem";
+import CategoryItem from "./CategoryItem";
 
 const MenuCategory = ({ menuCategory, showCategoryItems, onCategoryClick }) => {
   return (
@@ -14,7 +14,7 @@ const MenuCategory = ({ menuCategory, showCategoryItems, onCategoryClick }) => {
       {showCategoryItems && (
         <div className="border rounded-lg solid border-gray-300 ">
           {menuCategory.items.map((item) => {
-            return <CategoryItems key={item.id} item={item} />;
+            return <CategoryItem key={item.id} item={item} />;
           })}
         </div>
       )}
