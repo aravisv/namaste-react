@@ -1,9 +1,11 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
 import RestaurantMenu from "./components/RestaurantMenu";
 import useDummyUser from "./utils/useDummyUser";
 import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
 
 const About = lazy(() => import("./components/About"));
 const Header = lazy(() => import("./components/Header"));
@@ -21,12 +23,14 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ userName: user }}>
-      <div>
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ userName: user, setUser }}>
+        <div>
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

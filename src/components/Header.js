@@ -3,10 +3,13 @@ import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { onlineStatus } = useOnlineStatus();
   const { userName } = useContext(UserContext);
+  const cartItems = useSelector((state) => state.cart.items);
+
   return (
     <div className="flex px-[10px] items-center justify-between bg-blue-400 shadow-2xs">
       <div>
@@ -24,7 +27,7 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
+          <li>Cart - {`${cartItems?.length}`}</li>
           {/* <UserContext.Consumer>
             {(data) => {
               return <li>User: {data.userName}</li>;
