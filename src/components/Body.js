@@ -21,6 +21,7 @@ const Body = () => {
       <div className="flex m-2">
         <div className="search-box">
           <input
+            data-testid="searchText"
             className="border border-solid rounded"
             type="text"
             value={searchText}
@@ -29,6 +30,7 @@ const Body = () => {
             }}
           />
           <button
+            data-testid="searchButton"
             className="mx-4 px-4 border border-solid rounded hover:bg-gray-300 hover:cursor-pointer"
             onClick={() => searchRestaurants(searchText)}
           >
